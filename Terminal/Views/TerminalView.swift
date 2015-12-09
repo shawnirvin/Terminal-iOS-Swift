@@ -169,6 +169,10 @@ class TerminalView: UITextView, UITextFieldDelegate, UITextViewDelegate {
         return false
     }
     
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        return false
+    }
+    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if (self.retrievingUserInput) {
             self.typing = true
