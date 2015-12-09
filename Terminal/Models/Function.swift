@@ -11,19 +11,20 @@ import Foundation
 class Function: NSObject {
     var identifier: String
     var name: String
+    var completionBlock: ((response: String?) -> Void)?
     
     init(identifier: String, name: String) {
         self.identifier = identifier
         self.name = name
     }
     
-    func execute(command: String) -> String? {
-        return nil
+    func execute(command: Command, completion: (response: String?) -> Void) {
+        completion(response: nil)
     }
     
-    func equals(command: String) -> Bool {
+    func equals(command: Command) -> Bool {
         if let expression = try? NSRegularExpression.init(pattern: self.identifier, options: .CaseInsensitive) {
-            let matches = expression.matchesInString(command, options: .Anchored, range: NSMakeRange(0, command.characters.count))
+            let matches = expression.matchesInString(command.rawValue, options: .Anchored, range: NSMakeRange(0, command.rawValue.characters.count))
             
             if matches.count == 1 {
                 return true

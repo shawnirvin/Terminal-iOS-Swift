@@ -13,22 +13,25 @@ class RunFunction: Function, Helpful {
         super.init(identifier: "^run \\S+", name: "run")
     }
     
-    override func execute(command: String) -> String? {
-        let program = command.stringByReplacingOccurrencesOfString("run ", withString: "").lowercaseString
+    override func execute(command: Command, completion: (response: String?) -> Void) {
+        let elements = command.elements
+        let program = elements[1]
+        let formattedProgramName = program.lowercaseString
         
         if program.characters.count == 0 {
-            return "Program name not specified."
+            completion(response: "Program name not specified.")
         }
         else {
-            if program == "calculator" {
-                TerminalViewController.currentProgram = Calculator()
+            if formattedProgramName == "calculator" {
+                TerminalViewController.currentInstance.currentProgram = Calculator()
             }
             else {
-                return program + " is not a valid program."
+                completion(response: program + " is not a valid program.")
+                return
             }
         }
         
-        return nil
+        completion(response: nil)
     }
     
     func help() -> String {

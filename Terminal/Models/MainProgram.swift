@@ -21,10 +21,7 @@ class MainProgram: Program {
     }
     
     override func help() -> String {
-        var help = super.help()
-        
-        help = help +
-            "\trun\t\t[program]"
+        let help = "\trun\t\t[program]"
         
         return help
     }

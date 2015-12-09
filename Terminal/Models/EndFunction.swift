@@ -13,13 +13,13 @@ class EndFunction: Function, Helpful {
         super.init(identifier: "^end", name: "end")
     }
     
-    override func execute(command: String) -> String? {
-        if (TerminalViewController.currentProgram.name == "System") {
-            return "Not currently running a program."
+    override func execute(command: Command, completion: (response: String?) -> Void) {
+        if (TerminalViewController.currentInstance.currentProgram.name == "System") {
+            completion(response: "Not currently running a program.")
         }
         else {
-            TerminalViewController.currentProgram = MainProgram()
-            return nil
+            TerminalViewController.currentInstance.currentProgram = MainProgram()
+            completion(response: nil)
         }
     }
     

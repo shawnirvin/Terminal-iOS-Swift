@@ -13,12 +13,7 @@ class Calculator: Program {
         super.init(name: "Calculator")
     }
     
-    override func runCommand(command: String) -> String? {
-        if let superResponse = super.runCommand(command) {
-            return superResponse
-        }
-        else {
-            return nil
-        }
+    override func runCommand(command: Command, completion: (response: String?) -> Void) {
+        super.runCommand(command, completion: completion)
     }
 }

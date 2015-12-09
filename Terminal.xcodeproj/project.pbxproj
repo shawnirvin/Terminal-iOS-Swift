@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		296A4C471C12552800E352D5 /* DefaultsFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A4C461C12552800E352D5 /* DefaultsFunction.swift */; };
+		2990E5701C17B13200B18B51 /* ClearFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E56F1C17B13200B18B51 /* ClearFunction.swift */; };
 		29B8870F1C11416800AE1ED6 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B887051C11416800AE1ED6 /* TerminalViewController.swift */; };
 		29B887101C11416800AE1ED6 /* Helpful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B887071C11416800AE1ED6 /* Helpful.swift */; };
 		29B887111C11416800AE1ED6 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B887091C11416800AE1ED6 /* Calculator.swift */; };
@@ -19,13 +20,15 @@
 		29B887201C11419700AE1ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B887181C11419700AE1ED6 /* AppDelegate.swift */; };
 		29B887221C11419700AE1ED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B8871A1C11419700AE1ED6 /* LaunchScreen.storyboard */; };
 		29B887231C11419700AE1ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B8871C1C11419700AE1ED6 /* Main.storyboard */; };
-		29B887281C1141CB00AE1ED6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29B887261C1141CB00AE1ED6 /* Info.plist */; };
 		29B887291C1141CB00AE1ED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B887271C1141CB00AE1ED6 /* Assets.xcassets */; };
 		29B8872B1C1142B900AE1ED6 /* MainProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8872A1C1142B900AE1ED6 /* MainProgram.swift */; };
+		29DBD7A41C14A223000329BC /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DBD7A31C14A223000329BC /* Command.swift */; };
+		29EB36E91C16554E005F70FB /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB36E81C16554E005F70FB /* TerminalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		296A4C461C12552800E352D5 /* DefaultsFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsFunction.swift; sourceTree = "<group>"; };
+		2990E56F1C17B13200B18B51 /* ClearFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearFunction.swift; sourceTree = "<group>"; };
 		29B887051C11416800AE1ED6 /* TerminalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
 		29B887071C11416800AE1ED6 /* Helpful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpful.swift; sourceTree = "<group>"; };
 		29B887091C11416800AE1ED6 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -40,7 +43,9 @@
 		29B887261C1141CB00AE1ED6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29B887271C1141CB00AE1ED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29B8872A1C1142B900AE1ED6 /* MainProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainProgram.swift; sourceTree = "<group>"; };
+		29DBD7A31C14A223000329BC /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		29E254351C0689A30022A758 /* Terminal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Terminal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29EB36E81C16554E005F70FB /* TerminalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +59,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2990E5711C17B52C00B18B51 /* Programs */ = {
+			isa = PBXGroup;
+			children = (
+				29B8870D1C11416800AE1ED6 /* Program.swift */,
+				29B8872A1C1142B900AE1ED6 /* MainProgram.swift */,
+				29B887091C11416800AE1ED6 /* Calculator.swift */,
+			);
+			name = Programs;
+			sourceTree = "<group>";
+		};
+		2990E5721C17B53600B18B51 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				29B8870A1C11416800AE1ED6 /* EndFunction.swift */,
+				29B8870B1C11416800AE1ED6 /* Function.swift */,
+				29B8870C1C11416800AE1ED6 /* HelpFunction.swift */,
+				29B8870E1C11416800AE1ED6 /* RunFunction.swift */,
+				296A4C461C12552800E352D5 /* DefaultsFunction.swift */,
+				2990E56F1C17B13200B18B51 /* ClearFunction.swift */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
 		29B887041C11416800AE1ED6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +101,9 @@
 		29B887081C11416800AE1ED6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				29B8870D1C11416800AE1ED6 /* Program.swift */,
-				29B8872A1C1142B900AE1ED6 /* MainProgram.swift */,
-				29B887091C11416800AE1ED6 /* Calculator.swift */,
-				29B8870A1C11416800AE1ED6 /* EndFunction.swift */,
-				29B8870B1C11416800AE1ED6 /* Function.swift */,
-				29B8870C1C11416800AE1ED6 /* HelpFunction.swift */,
-				29B8870E1C11416800AE1ED6 /* RunFunction.swift */,
-				296A4C461C12552800E352D5 /* DefaultsFunction.swift */,
+				2990E5711C17B52C00B18B51 /* Programs */,
+				2990E5721C17B53600B18B51 /* Functions */,
+				29DBD7A31C14A223000329BC /* Command.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,12 +139,21 @@
 			children = (
 				29B887081C11416800AE1ED6 /* Models */,
 				29B887061C11416800AE1ED6 /* Protocols */,
+				29EB36E71C1654B0005F70FB /* Views */,
 				29B887041C11416800AE1ED6 /* Controllers */,
 				29B887171C11419700AE1ED6 /* Supporting Files */,
 				29B887261C1141CB00AE1ED6 /* Info.plist */,
 				29B887271C1141CB00AE1ED6 /* Assets.xcassets */,
 			);
 			path = Terminal;
+			sourceTree = "<group>";
+		};
+		29EB36E71C1654B0005F70FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				29EB36E81C16554E005F70FB /* TerminalView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +183,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Shawn Irvin";
 				TargetAttributes = {
 					29E254341C0689A30022A758 = {
@@ -186,7 +218,6 @@
 				29B887231C11419700AE1ED6 /* Main.storyboard in Resources */,
 				29B887221C11419700AE1ED6 /* LaunchScreen.storyboard in Resources */,
 				29B887291C1141CB00AE1ED6 /* Assets.xcassets in Resources */,
-				29B887281C1141CB00AE1ED6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,10 +235,13 @@
 				29B887141C11416800AE1ED6 /* HelpFunction.swift in Sources */,
 				29B887161C11416800AE1ED6 /* RunFunction.swift in Sources */,
 				296A4C471C12552800E352D5 /* DefaultsFunction.swift in Sources */,
+				2990E5701C17B13200B18B51 /* ClearFunction.swift in Sources */,
 				29B887151C11416800AE1ED6 /* Program.swift in Sources */,
 				29B887121C11416800AE1ED6 /* EndFunction.swift in Sources */,
 				29B887111C11416800AE1ED6 /* Calculator.swift in Sources */,
 				29B8872B1C1142B900AE1ED6 /* MainProgram.swift in Sources */,
+				29EB36E91C16554E005F70FB /* TerminalView.swift in Sources */,
+				29DBD7A41C14A223000329BC /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

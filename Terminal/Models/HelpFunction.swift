@@ -19,13 +19,13 @@ class HelpFunction: Function {
         super.init(identifier: "^help[ ]?\\S*", name: "help")
     }
     
-    override func execute(command: String) -> String? {
-        if command == "help" {
-            return helpText
+    override func execute(command: Command, completion: (response: String?) -> Void) {
+        if command.rawValue.lowercaseString == "help" {
+            completion(response: helpText)
         }
         else {
-            let rangeOfSpaceInCommand = command.rangeOfString(" ")
-            let functionName = command.substringFromIndex((rangeOfSpaceInCommand?.endIndex)!)
+            let rangeOfSpaceInCommand = command.rawValue.rangeOfString(" ")
+            let functionName = command.rawValue.substringFromIndex((rangeOfSpaceInCommand?.endIndex)!)
             
             let helpfulFunctions = functions.filter({ (function) -> Bool in
                 return function is Helpful
@@ -34,11 +34,13 @@ class HelpFunction: Function {
             for function in helpfulFunctions {
                 if function.name == functionName {
                     let helpfulFunction = function as! Helpful
-                    return helpfulFunction.help()
+                    completion(response: helpfulFunction.help())
+                    
+                    return
                 }
             }
             
-            return "Function does not exist."
+            completion(response: "Function does not exist or does not support the help function.")
         }
     }
 }

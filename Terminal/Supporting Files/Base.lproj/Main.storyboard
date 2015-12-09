@@ -17,16 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cI-zQ-7uo">
-                                <rect key="frame" x="252" y="20" width="97" height="295"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Jcl-9a-2OF" id="bdX-f4-fKc"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" text="&gt; _" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-uu-32i">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" text="&gt; _" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-uu-32i" customClass="TerminalView" customModule="Terminal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,24 +33,19 @@
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vfM-xh-P2V" firstAttribute="top" secondItem="VK4-uu-32i" secondAttribute="bottom" id="J8S-y8-RFd"/>
-                            <constraint firstItem="3cI-zQ-7uo" firstAttribute="top" secondItem="pA5-Zh-eR1" secondAttribute="bottom" constant="20" id="Klz-Uj-zLw"/>
                             <constraint firstItem="VK4-uu-32i" firstAttribute="top" secondItem="pA5-Zh-eR1" secondAttribute="bottom" id="OMH-p8-KhB"/>
                             <constraint firstItem="VK4-uu-32i" firstAttribute="leading" secondItem="7zn-Wr-7Zw" secondAttribute="leadingMargin" constant="-20" id="W0L-uU-Npe"/>
-                            <constraint firstItem="vfM-xh-P2V" firstAttribute="top" secondItem="3cI-zQ-7uo" secondAttribute="bottom" constant="285" id="XMf-Ok-uSd"/>
-                            <constraint firstItem="3cI-zQ-7uo" firstAttribute="leading" secondItem="7zn-Wr-7Zw" secondAttribute="leadingMargin" constant="232" id="kNa-TR-fli"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VK4-uu-32i" secondAttribute="trailing" constant="-20" id="sWc-BT-czD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3cI-zQ-7uo" secondAttribute="trailing" constant="231" id="u9N-f4-57i"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="terminalTextView" destination="VK4-uu-32i" id="DRS-EV-LJk"/>
-                        <outlet property="textField" destination="3cI-zQ-7uo" id="OTj-5K-Tnl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVH-vM-3RH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="753"/>
+            <point key="canvasLocation" x="779" y="662"/>
         </scene>
     </scenes>
 </document>

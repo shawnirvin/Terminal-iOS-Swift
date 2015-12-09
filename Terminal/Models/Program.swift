@@ -10,7 +10,8 @@ import Foundation
 
 class Program: NSObject, Helpful {
     var name: String
-    private lazy var functions: [Function] = [EndFunction(), HelpFunction(programHelpText: self.help(), regisertedFunctions: [Function]())]
+    var completionBlock: ((response: String?) -> Void)?
+    private lazy var functions: [Function] = [EndFunction(), ClearFunction(), HelpFunction(programHelpText: self.help(), regisertedFunctions: [Function]())]
     
     init(name: String) {
         self.name = name
@@ -26,24 +27,28 @@ class Program: NSObject, Helpful {
         }
     }
     
+    func unregisterFunction(functionToRemove: Function) {
+        for function in self.functions {
+            if function == functionToRemove {
+                self.functions.removeAtIndex(self.functions.indexOf(function)!)
+            }
+        }
+    }
+    
     func registeredFunctions() -> [Function] {
         return self.functions
     }
     
-    func runCommand(command: String) -> String? {
+    func runCommand(command: Command, completion: (response: String?) -> Void) {
         if let function = functionForCommand(command) {
-            if let response = function.execute(command) {
-                return response
-            }
+            function.execute(command, completion: completion)
         }
         else {
-            return "Invalid function name."
+            completion(response: nil)
         }
-        
-        return nil
     }
     
-    func functionForCommand(command: String) -> Function? {
+    func functionForCommand(command: Command) -> Function? {
         for function in functions {
             if function.equals(command) {
                 return function
