@@ -4,8 +4,6 @@
 
 # Design
 
----
-
 There is one main view controller called `TerminalViewController` whos view is a `TerminalView`.
 
 The `TerminalView` handles all of the implementation for receiving user input, properly formatting the user input in the text view and handling the logic for the cursor. User input is not directly put into the text view, rather, it is put into an invisible `UITextField` and the input is then translated into the text view.
