@@ -98,7 +98,8 @@ class TerminalView: UITextView, UITextFieldDelegate, UITextViewDelegate {
     private func configure() {
         addTextField()
         self.delegate = self
-        self.editable = false
+        self.editable = true
+        self.selectable = false
         
         self.text = ""
         
