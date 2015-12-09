@@ -19,8 +19,6 @@ And repeat.
 Programs
 ========
 
----
-
 The currently implemented programs are:
 
 * Main System
@@ -32,7 +30,5 @@ The currently planned programs are:
 
 License
 =======
-
----
 
 This project is licensed under the MIT Open Source license.
