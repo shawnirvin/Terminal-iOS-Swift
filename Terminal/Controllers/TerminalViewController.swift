@@ -12,12 +12,26 @@ class TerminalViewController: UIViewController, UITextFieldDelegate, UITextViewD
 
     @IBOutlet weak var terminalTextView: TerminalView!
     
-    let lineStartChar = ":"
     static var currentInstance: TerminalViewController!
+    private let lineStartChar = ":"
     var currentProgram: Program = MainProgram()
+    private lazy var dateFormatter: NSDateFormatter = {
+        let df = NSDateFormatter()
+        df.dateFormat = "HH:mm:ss"
+        
+        return df
+    }()
+    
+    var currentTime: String {
+        get {
+            return self.dateFormatter.stringFromDate(NSDate())
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Setting.setDefaultsIfNotSet()
         
         TerminalViewController.currentInstance = self
         
@@ -30,12 +44,22 @@ class TerminalViewController: UIViewController, UITextFieldDelegate, UITextViewD
         NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardDidHideNotification, object: nil, queue: NSOperationQueue.mainQueue()) { notification in
             self.terminalTextView.frame.size.height = self.view.frame.size.height
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         getInput()
     }
     
     func getInput() {
-        terminalTextView.getInput(self.currentProgram.name + self.lineStartChar + " ", inputType: .Normal) { userInput in
+        var prefix = self.currentProgram.name + self.lineStartChar + " "
+        
+        if Setting.defaultForSettingType(.ShowTime) as! Bool {
+            prefix = "[" + self.currentTime + "] " + prefix
+        }
+        
+        terminalTextView.getInput(prefix, inputType: .Normal) { userInput in
             self.currentProgram.runCommand(Command(rawInput: userInput)) { response in
                 if let output = response {
                     self.terminalTextView.print("\n\t" + output)

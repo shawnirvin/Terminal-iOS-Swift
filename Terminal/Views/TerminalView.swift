@@ -18,6 +18,7 @@ class TerminalView: UITextView, UITextFieldDelegate, UITextViewDelegate {
     private var retrievingUserInput = false {
         didSet {
             if self.retrievingUserInput {
+                self.cursorTimer?.invalidate()
                 self.cursorTimer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "blinkCursor:", userInfo: nil, repeats: true)
             }
             else {

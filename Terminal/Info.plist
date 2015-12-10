@@ -48,5 +48,38 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).RunCalculator</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Run Calculator</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypePlay</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>command</key>
+				<string>run calculator</string>
+				<key>program</key>
+				<string>MainProgram</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).GetDeviceInfo</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Get Device Info</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeSearch</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>command</key>
+				<string>device info</string>
+				<key>program</key>
+				<string>MainProgram</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

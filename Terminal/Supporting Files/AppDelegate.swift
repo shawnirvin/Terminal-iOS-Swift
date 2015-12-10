@@ -13,10 +13,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        let command = shortcutItem.userInfo!["command"] as! String
+        let programString = shortcutItem.userInfo!["program"] as! String
+        
+        let classInst = NSClassFromString("Terminal." + programString) as! NSObject.Type
+        let program = classInst.init() as! Program
+        
+        TerminalViewController.currentInstance.currentProgram = program
+        
+        program.runCommand(Command(rawInput: command)) { response in
+            let hasText = TerminalViewController.currentInstance.terminalTextView.text.characters.count > 0
+            
+            if let output = response {
+                if hasText {
+                    TerminalViewController.currentInstance.terminalTextView.print("\n\n")
+                }
+                
+                TerminalViewController.currentInstance.terminalTextView.print("\t" + output)
+            }
+            
+            if hasText {
+                TerminalViewController.currentInstance.getInput()
+            }
+            
+            completionHandler(true)
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

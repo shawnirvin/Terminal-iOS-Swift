@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		295003CA1C18E5BA00E6F0BA /* DeviceFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295003C91C18E5BA00E6F0BA /* DeviceFunction.swift */; };
+		295003CC1C18F46400E6F0BA /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295003CB1C18F46400E6F0BA /* Setting.swift */; };
+		295003CE1C1901F200E6F0BA /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 295003CD1C1901F200E6F0BA /* Defaults.plist */; };
+		295003D01C1904DD00E6F0BA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295003CF1C1904DD00E6F0BA /* Clock.swift */; };
+		295003D21C19051B00E6F0BA /* TimerFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295003D11C19051B00E6F0BA /* TimerFunction.swift */; };
+		295FB2E01C17F23600CE9B32 /* ProgressExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB2DF1C17F23600CE9B32 /* ProgressExtention.swift */; };
 		296A4C471C12552800E352D5 /* DefaultsFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A4C461C12552800E352D5 /* DefaultsFunction.swift */; };
 		2990E5701C17B13200B18B51 /* ClearFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990E56F1C17B13200B18B51 /* ClearFunction.swift */; };
 		29B8870F1C11416800AE1ED6 /* TerminalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B887051C11416800AE1ED6 /* TerminalViewController.swift */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		295003C91C18E5BA00E6F0BA /* DeviceFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceFunction.swift; sourceTree = "<group>"; };
+		295003CB1C18F46400E6F0BA /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		295003CD1C1901F200E6F0BA /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		295003CF1C1904DD00E6F0BA /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		295003D11C19051B00E6F0BA /* TimerFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerFunction.swift; sourceTree = "<group>"; };
+		295FB2DF1C17F23600CE9B32 /* ProgressExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressExtention.swift; sourceTree = "<group>"; };
 		296A4C461C12552800E352D5 /* DefaultsFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsFunction.swift; sourceTree = "<group>"; };
 		2990E56F1C17B13200B18B51 /* ClearFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearFunction.swift; sourceTree = "<group>"; };
 		29B887051C11416800AE1ED6 /* TerminalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +77,7 @@
 				29B8870D1C11416800AE1ED6 /* Program.swift */,
 				29B8872A1C1142B900AE1ED6 /* MainProgram.swift */,
 				29B887091C11416800AE1ED6 /* Calculator.swift */,
+				295003CF1C1904DD00E6F0BA /* Clock.swift */,
 			);
 			name = Programs;
 			sourceTree = "<group>";
@@ -78,6 +91,8 @@
 				29B8870E1C11416800AE1ED6 /* RunFunction.swift */,
 				296A4C461C12552800E352D5 /* DefaultsFunction.swift */,
 				2990E56F1C17B13200B18B51 /* ClearFunction.swift */,
+				295003C91C18E5BA00E6F0BA /* DeviceFunction.swift */,
+				295003D11C19051B00E6F0BA /* TimerFunction.swift */,
 			);
 			name = Functions;
 			sourceTree = "<group>";
@@ -104,6 +119,8 @@
 				2990E5711C17B52C00B18B51 /* Programs */,
 				2990E5721C17B53600B18B51 /* Functions */,
 				29DBD7A31C14A223000329BC /* Command.swift */,
+				295FB2DF1C17F23600CE9B32 /* ProgressExtention.swift */,
+				295003CB1C18F46400E6F0BA /* Setting.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +131,7 @@
 				29B887181C11419700AE1ED6 /* AppDelegate.swift */,
 				29B8871A1C11419700AE1ED6 /* LaunchScreen.storyboard */,
 				29B8871C1C11419700AE1ED6 /* Main.storyboard */,
+				295003CD1C1901F200E6F0BA /* Defaults.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -215,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295003CE1C1901F200E6F0BA /* Defaults.plist in Resources */,
 				29B887231C11419700AE1ED6 /* Main.storyboard in Resources */,
 				29B887221C11419700AE1ED6 /* LaunchScreen.storyboard in Resources */,
 				29B887291C1141CB00AE1ED6 /* Assets.xcassets in Resources */,
@@ -228,19 +247,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295003D21C19051B00E6F0BA /* TimerFunction.swift in Sources */,
 				29B887101C11416800AE1ED6 /* Helpful.swift in Sources */,
 				29B8870F1C11416800AE1ED6 /* TerminalViewController.swift in Sources */,
 				29B887131C11416800AE1ED6 /* Function.swift in Sources */,
 				29B887201C11419700AE1ED6 /* AppDelegate.swift in Sources */,
 				29B887141C11416800AE1ED6 /* HelpFunction.swift in Sources */,
+				295003CA1C18E5BA00E6F0BA /* DeviceFunction.swift in Sources */,
 				29B887161C11416800AE1ED6 /* RunFunction.swift in Sources */,
 				296A4C471C12552800E352D5 /* DefaultsFunction.swift in Sources */,
 				2990E5701C17B13200B18B51 /* ClearFunction.swift in Sources */,
 				29B887151C11416800AE1ED6 /* Program.swift in Sources */,
 				29B887121C11416800AE1ED6 /* EndFunction.swift in Sources */,
 				29B887111C11416800AE1ED6 /* Calculator.swift in Sources */,
+				295003D01C1904DD00E6F0BA /* Clock.swift in Sources */,
 				29B8872B1C1142B900AE1ED6 /* MainProgram.swift in Sources */,
 				29EB36E91C16554E005F70FB /* TerminalView.swift in Sources */,
+				295FB2E01C17F23600CE9B32 /* ProgressExtention.swift in Sources */,
+				295003CC1C18F46400E6F0BA /* Setting.swift in Sources */,
 				29DBD7A41C14A223000329BC /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,10 +18,12 @@ class MainProgram: Program {
     private func loadFunctions() {
         self.registerFunction(RunFunction())
         self.registerFunction(DefaultsFunction())
+        self.registerFunction(DeviceFunction())
     }
     
     override func help() -> String {
-        let help = "\trun\t\t[program]"
+        let help = "\trun\t\t[program]" +
+                    "\n\t\tdevice\t[property]"
         
         return help
     }

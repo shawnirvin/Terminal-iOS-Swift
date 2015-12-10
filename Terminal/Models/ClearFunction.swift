@@ -10,7 +10,7 @@ import Foundation
 
 class ClearFunction: Function, Helpful {
     init() {
-        super.init(identifier: "clear", name: "clear")
+        super.init(identifier: "^clear", name: "clear")
     }
     
     override func execute(command: Command, completion: (response: String?) -> Void) {
